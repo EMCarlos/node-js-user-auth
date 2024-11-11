@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+
+# misc
+/db/User.json
+pnpm-lock.yaml
+yarn.lock
+
+.env

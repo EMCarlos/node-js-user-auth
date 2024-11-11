@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <script>
+      const onLogoutClick = async () => {
+        const response = await fetch('/logout', {
+          method: 'POST'
+        })
+
+        const body = await response.text()
+
+        if (response.ok) {
+          window.location = '/'
+        } else {
+          alert(body)
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Hola <%= username%>!</h1>
+    <h2>Este contenido está protegido</h2>
+
+    <!-- Boton para cerrar sesion -->
+    <form
+      id="logout-form"
+      onSubmit="onLogoutClick()"
+    >
+      <button type="submit">Cerrar sesión</button>
+    </form>
+  </body>
+</html>
